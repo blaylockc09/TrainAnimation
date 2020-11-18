@@ -1,0 +1,661 @@
+/*
+I want to start by saying that I hate commenting CSS code. Let's continue. 
+*/
+
+
+
+/*
+Although body is not needed entirely I have kept it in, incase there is an overflow issue. 
+*/
+body{
+  width:100%;
+  height: 100%;
+  overflow:hidden;
+  margin: 0;
+  padding: 0;
+  color: #333;
+
+}
+
+/* 
+The ad is the entire page. 
+*/
+.ad {
+    background: #00b4ff;
+    border: blue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+#wrap {
+ 
+  position:absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+
+
+#steam {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 200px;
+  margin-top: -75px;
+  z-index: 0;
+  opacity: 0;
+}
+.steam-one{
+   animation: steam-one 2s ease-out infinite;
+}
+
+.steam-three{
+  animation: steam-one 2s ease-out 1s infinite;
+}
+
+/*
+This animation controls the steam. It changes the height and makes it fade away while scaling in size. 
+*/
+@keyframes steam-one {
+  0%{
+    transform: translateY(0) translateX(0) scale(0.25);
+    opacity: 0.25;
+  }
+  100%{
+    transform: translateY(-200px) translateX(-20px) scale(1);
+    opacity: 0;
+  }
+}
+
+.steam-two{
+ animation: steam-two 4s ease-out 0.5s infinite;
+}
+
+.steam-four{
+animation: steam-two 4s ease-out 1s infinite;
+}
+
+/*
+This animation controls the steam. It changes the height and makes it fade away while scaling in size. 
+*/
+@keyframes steam-two{
+   0%{
+     transform: translateY(0) translateX(0) scale(0.25);
+     opacity: 0.25;
+   }
+   100%{
+     transform: translateY(-200px) translateX(20px) scale(1);
+     opacity: 0;
+   }
+}
+
+.wheel-one{
+  position: absolute;
+ top:200px;
+ left:250px;
+}
+
+.inner-wheel-one {
+  z-index: 3;
+  position:absolute;
+  top:50%;
+  left:50%;
+  background-color:brown;
+  transform:translate(-50%,-50%);
+  border-left:10px solid brown ;
+  border-top:10px solid #555;
+  border-right:10px solid brown;
+  border-bottom:10px solid #555;
+  box-sizing:border-box;
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  animation-duration: 3s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+   animation-timing-function: linear;
+
+}
+
+
+/*
+Used for the wheels to rotate. 
+*/
+@keyframes spin{
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+.wheel-two{
+  position:absolute;
+  top:200px;
+  left: 175px;
+
+}
+
+.inner-wheel-two {
+  z-index: 3;
+  position:absolute;
+  top:50%;
+  left:50%;
+  background-color:brown;
+  transform:translate(-50%,-50%);
+   border-left:10px solid brown ;
+   border-top:10px solid #555;
+   border-right:10px solid brown;
+   border-bottom:10px solid #555;
+  box-sizing:border-box;
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  animation-duration: 3s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+   animation-timing-function: linear;
+
+
+}
+
+
+.wheel-three{
+  position:absolute;
+  top:150px;
+}
+
+.inner-wheel-three {
+  z-index: 3;
+  position:absolute;
+  top:50%;
+  left:50%;
+  background-color:brown;
+  transform:translate(-50%,-50%);
+   border-left:10px solid brown ;
+   border-top:10px solid #555;
+   border-right:10px solid brown;
+   border-bottom:10px solid #555;
+  box-sizing:border-box;
+  width:125px;
+  height:125px;
+  border-radius:50%;
+  animation-duration: 3s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+   animation-timing-function: linear;
+
+
+}
+
+
+.smokeStack{
+  z-index: 1;
+  position: absolute;
+	width: 25px;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 75px solid #555;
+  left: 250px;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.smokeStack-two{
+  z-index: 1;
+  position: absolute;
+	width: 25px;
+	height: 0;
+	border-top: 75px solid #555;
+  left: 274px;
+  top:50px;
+
+}
+
+
+
+.tree {
+	background: #654321;
+	position:absolute;
+	width:15px;
+	height:40px;
+	font-size:0;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
+
+.leaf {
+	display:flex;
+	margin-bottom:30px;
+}
+.leaf:before {
+	content:'';
+	display:block;
+	width:0;
+	height:0;
+	border-style:solid;
+	border-width:0 0 100px 50px;
+	border-color:transparent transparent darkgreen transparent;
+	margin-top:-125px;
+	margin-left:-43px;
+}
+.leaf:after {
+	content:'';
+	display:block;
+	width:0;
+	height:0;
+	border-style:solid;
+	border-width:0 50px 100px 0;
+	border-color:transparent transparent green transparent;
+	margin-top:-125px;
+}
+
+.tree#one {
+	margin-top:150px;
+	margin-left:44px;
+  transform:scale(.6);
+  position: absolute;
+  left: 200px;
+  animation-name: moving;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.tree#two {
+	margin-top:170px;
+	margin-left:350px;
+  transform:scale(.6);
+  position: absolute;
+  left: 200px;
+  animation-name: moving;
+  animation-duration: 13s;
+  animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+.tree#three {
+	margin-top:170px;
+	margin-left:77px;
+  transform:scale(.6);
+  animation-name: moving;
+  animation-duration: 13s;
+  animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+.tree#four {
+	margin-top:145px;
+	margin-left:300px;
+  transform:scale(.6);
+  animation-name: moving;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+
+/*
+used to move the trees from right to left. giving the illusion that the train is also moving. 
+*/
+@keyframes moving{
+  0% {
+    margin-left:5000px;
+  }
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+.cabin{
+  z-index: 1;
+  position: absolute;
+  width: 100px;
+  height: 150px;
+  border: 30px solid hsl(215, 100%, 57%);
+  animation-name: bounce;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-color: rgba(160, 196, 224, 0.493)
+
+}
+.engineer {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 10px;
+	z-index: 1;
+}
+.cabin-two {
+	z-index: 3;
+	position: absolute;
+	width: 335px;
+  height: 100px;
+  transform: skew(20deg);
+	background-color:  hsl(215, 87%, 24%);
+  top: 121px;
+  animation-name: bounce;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cabin-three {
+	z-index: 2;
+	position: absolute;
+	width: 177px;
+	height: 135px;
+	transform: skew(20deg);
+	background-color: hsl(215, 88%, 16%);
+	top: 61px;
+	animation-name: bounce;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	left: 157px;
+}
+
+.front {
+	width: 100px;
+	height: 103px;
+	transform: skew(20deg);
+	background: brown;
+	position: absolute;
+	top: 121px;
+	left: 250px;
+  z-index: 1;
+  transition: 2s;
+  top:100px;
+}
+
+.top {
+    height: 50px;
+    width: 206px;
+    background-color: #555;
+    position: absolute;
+    top: -26px;
+    left: -25px;
+    z-index: 4;
+    animation-name: bounce;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+
+#train{
+  z-index: 1;
+  position: absolute;
+  animation-name: bounce;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  left:20%;
+}
+/*
+Give the train a bouncing motion. Although trains do not and SHOULD not bounce it adds to the illusion of movement. 
+*/
+@keyframes bounce { 
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-20px);} 
+  60% {transform: translateY(-15px);} 
+}
+
+.ground {
+	top: 170px;
+	position: absolute;
+	height: 65px;
+	width: 100%;
+	background-color: rgb(31, 139, 31);
+
+}
+
+.driveShaft{
+  width:86px;
+  height: 10px;
+  background-color: yellow;
+  z-index: 5;
+  position: absolute;
+  top:264px;
+  left: 211px;
+  animation: wheel-joint 2s linear infinite;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#background-wrap {
+	bottom: 0;
+	/* left: 0; */
+	padding-top: 50px;
+	position: fixed;
+	/* right: 0; */
+	z-index: -1;
+	width: 100%;
+	height: 620px;
+
+}
+
+/* KEYFRAMES */
+
+/*
+this is for moving the clouds from right to left. 
+*/
+@keyframes animateCloud {
+  0% {
+      margin-left: 100%;
+  }
+  100% {
+      margin-right: 100%;
+  }
+}
+
+.x1 {
+
+animation: animateCloud 15s linear infinite;
+
+
+transform: scale(0.65);
+}
+
+.x2 {
+
+animation: animateCloud 10s linear infinite;
+
+transform: scale(0.3);
+}
+
+.x3 {
+
+animation: animateCloud 15s linear infinite;
+
+transform: scale(0.5);
+}
+
+.x4 {
+
+animation: animateCloud 18s linear infinite;
+
+
+transform: scale(0.4);
+}
+
+.x5 {
+
+animation: animateCloud 25s linear infinite;
+
+
+transform: scale(0.55);
+}
+
+
+.cloud {
+background: #fff;
+background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+
+
+border-radius: 100px;
+
+
+box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+
+height: 120px;
+position: relative;
+width: 350px;
+}
+
+.cloud:after, .cloud:before {
+background: #fff;
+content: '';
+position: absolute;
+z-indeX: -1;
+}
+
+.cloud:after {
+
+border-radius: 100px;
+
+height: 100px;
+left: 50px;
+top: -50px;
+width: 100px;
+}
+
+.cloud:before {
+border-radius: 200px;
+
+width: 180px;
+height: 180px;
+right: 50px;
+top: -90px;
+}
+
+.buttonLink {
+
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  position: relative;
+  z-index: 7;
+}
+
+.buttonLink:hover {
+  background-color: white; 
+  color: black;
+}
+
+.nightButton {
+
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  position: absolute;
+  left:50%;
+}
+
+.nightButton:hover {
+  background-color: white; 
+  color: black;
+}
+
+
+.backdrop{
+  width: 100%;
+}
+
+.foreground{
+  top: 300px;
+	position: absolute;
+	height: 300px;
+	width: 100%;
+	background: rgb(31, 139, 31);
+}
+
+.rails {
+  border-bottom: 0.3rem solid brown;
+  border-top: 0.3rem solid brown;
+  background: black;
+  background: linear-gradient(55deg, transparent 46%, brown 46%, brown 54%, transparent 54%) left/1.6rem 2.2rem, linear-gradient(-55deg, transparent 46%, brown 46%, white 54%, transparent 54%) left/1.6rem 2.2rem;
+  top:231px;
+  height: 3.6rem;
+  position: absolute;
+  width: 10000px;
+  animation-name: moving-two;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+/*
+Used to move the rails from left to right. A new move animation needed to be created because the first one had varying speeds and sizes for the trees. 
+*/
+@keyframes moving-two{
+  0% {
+   margin-left: 0px;
+  }
+  100% {
+    margin-left: -2500px;;
+  }
+}
+
+.light {
+	border-top: 50px solid yellow;
+	border-right: 10px solid transparent;
+	border-left: 500px solid transparent;
+	height: 0;
+	width: 200px;
+	position: absolute;
+	top: 135px;
+	left: 220px;
+	transform: skewY(10deg);
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+#itemInfo {
+font-size: x-large;
+border: 2px solid black;
+max-width: 50%;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+z-index: 7;
+position: relative;
+background-color: cornsilk;
+opacity: 90%;
+}
+
+
+@media only screen and (max-width: 600px){
+  #itemInfo{
+    display:none;
+  }
+  #buttonLink{
+    display: inline-block;
+  }
+
+}
+
+max-height: 800px, 

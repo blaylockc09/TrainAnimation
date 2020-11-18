@@ -1,0 +1,133 @@
+<!-- 
+Chris Blaylock 
+10/07/2020
+This app shows an interactive ad with CSS animations
+-->
+ 
+ 
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body id="topSky" class="ad">
+
+    
+    <div id="sky" class="ad">
+     <div id="itemInfo">
+       <!--This is the 'banner' that gives information about the product and has a 'buy now' button that takes you to the amazon listing for the product.-->
+       <h1>Fun Time Toys Co. Timmy The Train Locomotive</h1>
+       <p>Toddlers will love getting aboard the Fun Time Ball Blowing Loco. Simply push the Loco train along to watch the colorful balls go round and round. </p>
+       <button class="buttonLink"onClick="window.open('https://www.amazon.com/Fun-Time-Toys-Co-Locomotive/dp/B0871NN6CS');">Buy Now!</button>
+     </div>
+
+     <!--Wrap everything to style easier.-->
+    <div id="wrap">
+
+      <!-- Wrap clouds together-->
+      <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+      
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+      
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+      
+        <div class="x4">
+            <div class="cloud"></div>
+        </div>
+      
+        <div class="x5">
+            <div class="cloud"></div>
+        </div>
+      </div>
+
+     
+      <!-- Div for train to force responsive behavior.-->
+      <div id="train">
+        <div class="engineer">
+          <img src="img/engineer.png" alt="">
+        </div>
+        <div class="train-body">
+          <div class="cabin"></div>
+          <div id="steam" class="steam-one"></div>
+          <div id="steam" class="steam-two"></div>
+          <div id="steam" class="steam-three"></div>
+          <div id="steam" class="steam-four"></div>
+          <div class="cabin-two">
+            <!-- nest night button in cabin two so that it is responsive with the cabin. -->
+             <button id="night"class="nightButton" >Press Me!</button>
+          </div>
+          <div class="cabin-three"></div>
+          <div class="front">
+          
+          </div>
+          <div id="lights" class="light"></div>
+          <div class="smokeStack"></div>
+          <div class="smokeStack-two"></div>
+          <div class="top"></div>
+          <div class="wheel-one">
+            <div class="inner-wheel-one"></div>
+          </div>
+          <div class="wheel-two">
+            <div class="inner-wheel-two"></div>
+          </div>
+          <div class="wheel-three">
+            <div class="inner-wheel-three"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- backdrop includes trees and ground -->
+  <div class="backdrop">
+    <div id="ground" class="ground"></div> 
+    <div id="ground" class="foreground"></div>
+    <div class="tree" id="one">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+    </div>
+    <div class="tree" id="two">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+    </div>
+    <div class="tree" id="three">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+    </div>
+    <div class="tree" id="four">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+    </div>
+  </div>
+  <div id="ground" class="foreground">
+    <div class="buttons">
+       
+        
+    </div>
+  
+  </div>
+  <div class="tracks"></div>
+    <div class="rails"></div>
+</div>
+
+
+  </div>
+  <!-- link script page to control night time -->
+  <script src="script.js"></script>
+  </body>
+</html>
